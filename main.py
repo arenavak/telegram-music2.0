@@ -6,6 +6,7 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext import Updater, MessageHandler, Filters, Handler
 import os
 import spotdl
+import logging
 
 
 
@@ -25,7 +26,7 @@ def start(update: Update, context: CallbackContext):
 
 def send_song(update, context):
 
-	
+	logging.log(logging.ERROR, 'you should select one of downloaders')
 	url= "" +update.message.text + ""
 	os.system(f'mkdir -p .temp{url}')
 	os.chdir(f'./.temp{url}')
